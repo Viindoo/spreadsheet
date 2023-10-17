@@ -388,7 +388,7 @@
     </t>
     <t t-name="spreadsheet_oca.OdooPanel" owl="1">
         <div class="o-section">
-            <div class="o-section-title">Link to Odoo menu</div>
+            <div class="o-section-title">Link to Viindoo menu</div>
             <div class="o-section-value">
                 <Many2OneField
                     value="menuId"
@@ -429,7 +429,7 @@
     >
         <xpath expr="//div" position="inside">
             <div class="o-section">
-                <div class="o-section-title">Link to Odoo menu</div>
+                <div class="o-section-title">Link to Viindoo menu</div>
                 <div class="o-section-value">
                     <Many2OneField
                         value="menuId"
@@ -449,7 +449,7 @@
     >
         <xpath expr="//div" position="inside">
             <div class="o-section">
-                <div class="o-section-title">Link to Odoo menu</div>
+                <div class="o-section-title">Link to Viindoo menu</div>
                 <div class="o-section-value">
                     <Many2OneField
                         value="menuId"
@@ -469,7 +469,7 @@
     >
         <xpath expr="//div" position="inside">
             <div class="o-section">
-                <div class="o-section-title">Link to Odoo menu</div>
+                <div class="o-section-title">Link to Viindoo menu</div>
                 <div class="o-section-value">
                     <Many2OneField
                         value="menuId"
@@ -489,7 +489,7 @@
     >
         <xpath expr="//div" position="inside">
             <div class="o-section">
-                <div class="o-section-title">Link to Odoo menu</div>
+                <div class="o-section-title">Link to Viindoo menu</div>
                 <div class="o-section-value">
                     <Many2OneField
                         value="menuId"
@@ -509,7 +509,7 @@
     >
         <xpath expr="//div" position="inside">
             <div class="o-section">
-                <div class="o-section-title">Link to Odoo menu</div>
+                <div class="o-section-title">Link to Viindoo menu</div>
                 <div class="o-section-value">
                     <Many2OneField
                         value="menuId"

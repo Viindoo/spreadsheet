@@ -3,6 +3,7 @@
 
 {
     "name": "Spreadsheet Oca",
+    "name_vi_VN": "Bảng tính OCA",
     "summary": """
         Allow to edit spreadsheets""",
     "version": "16.0.1.2.0",

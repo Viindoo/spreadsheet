@@ -3,6 +3,7 @@
 
 {
     "name": "Spreadsheet Dashboard Oca",
+    "name_vi_VN": "Tổng hợp bằng Bảng tính OCA",
     "summary": """
         Use OCA Spreadsheets on dashboards configuration""",
     "version": "16.0.1.1.0",
