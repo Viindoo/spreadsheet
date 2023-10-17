@@ -11,6 +11,8 @@
 
 Modules that expand the Odoo spreadsheets features.
 
+https://github.com/Viindoo/spreadsheet/assets/7938973/47f67dab-d084-409e-b44b-85419a9086d1
+
 <!-- /!\ do not modify below this line -->
 
 <!-- prettier-ignore-start -->
