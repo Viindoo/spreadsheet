@@ -18,6 +18,7 @@
         "views/spreadsheet_dashboard.xml",
         "data/spreadsheet_spreadsheet_import_mode.xml",
     ],
+    'category': 'Productivity/Documents',
     'installable': True,
     'application': False,
     'auto_install': True,

@@ -39,6 +39,7 @@
             "spreadsheet_oca/static/src/spreadsheet/bundle/chart_panel.esm.js",
         ],
     },
+    'category': 'Productivity/Documents',
     'installable': True,
     'application': False,
     'auto_install': True,
