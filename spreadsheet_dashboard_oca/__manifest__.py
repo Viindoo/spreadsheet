@@ -18,4 +18,7 @@
         "views/spreadsheet_dashboard.xml",
         "data/spreadsheet_spreadsheet_import_mode.xml",
     ],
+    'installable': True,
+    'application': False,
+    'auto_install': True,
 }

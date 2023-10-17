@@ -39,4 +39,7 @@
             "spreadsheet_oca/static/src/spreadsheet/bundle/chart_panel.esm.js",
         ],
     },
+    'installable': True,
+    'application': False,
+    'auto_install': True,
 }
