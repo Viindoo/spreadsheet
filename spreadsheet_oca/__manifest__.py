@@ -43,5 +43,5 @@
     'category': 'Productivity/Documents',
     'installable': True,
     'application': False,
-    'auto_install': True,
+    'auto_install': ['spreadsheet'],
 }
