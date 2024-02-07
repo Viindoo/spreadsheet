@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [spreadsheet_dashboard_oca](spreadsheet_dashboard_oca/) | 16.0.1.2.0 |  | Use OCA Spreadsheets on dashboards configuration
 [spreadsheet_oca](spreadsheet_oca/) | 16.0.1.3.0 |  | Allow to edit spreadsheets
-[base_view_inheritance_extension](base_view_inheritance_extension/) | 16.0.1.1.0 |  | Adds more operators for view inheritance
+[base_view_inheritance_extension](base_view_inheritance_extension/) | 16.0.1.2.0 |  | Adds more operators for view inheritance
 
 [//]: # (end addons)
 
