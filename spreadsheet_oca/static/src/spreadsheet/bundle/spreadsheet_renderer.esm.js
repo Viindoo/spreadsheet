@@ -65,6 +65,17 @@ export class SpreadsheetRenderer extends Component {
             dialogContent: undefined,
         });
         this.confirmDialog = this.closeDialog;
+        /**
+        * The command is empty, we have to drop all the next local revisions
+        * to avoid issues with undo/redo
+		* Same in method 'sendPendingMessage' of o_spreadsheet.js (can't add direct link to it because file is to large)
+        */
+        let revisions = [];
+        this.props.record.revisions.forEach((revision) => {
+            if (revision.commands.length > 0){
+                revisions.push(revision)
+            }
+        });
         this.spreadsheet_model = new Model(
             migrate(this.props.record.spreadsheet_raw),
             {
@@ -82,7 +93,7 @@ export class SpreadsheetRenderer extends Component {
                 mode: this.props.record.mode,
                 dataSources,
             },
-            this.props.record.revisions
+            revisions
         );
         useSubEnv({
             saveSpreadsheet: this.onSpreadsheetSaved.bind(this),
