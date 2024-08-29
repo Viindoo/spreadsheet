@@ -7,6 +7,7 @@ import {SpreadsheetRenderer} from "./spreadsheet_renderer.esm";
 import {registry} from "@web/core/registry";
 import spreadsheet from "@spreadsheet/o_spreadsheet/o_spreadsheet_extended";
 import {useService} from "@web/core/utils/hooks";
+import {makeDynamicRows} from "../utils/dynamic_row_generator.esm";
 
 const uuidGenerator = new spreadsheet.helpers.UuidGenerator();
 const actionRegistry = registry.category("actions");
@@ -72,7 +73,7 @@ export class ActionSpreadsheetOca extends Component {
         }
         const dataSourceId = uuidGenerator.uuidv4();
         const definition = {
-            title: this.import_data.metaData.title,
+            title: this.import_data.name,
             type: "odoo_" + this.import_data.metaData.mode,
             background: "#FFFFFF",
             stacked: this.import_data.metaData.stacked,
@@ -145,7 +146,7 @@ export class ActionSpreadsheetOca extends Component {
                 context: this.import_data.metaData.context,
                 orderBy: this.import_data.metaData.orderBy,
             },
-            name: this.import_data.metaData.name,
+            name: this.import_data.name,
         };
         const dataSource = spreadsheet_model.config.dataSources.add(
             dataSourceId,
@@ -160,7 +161,7 @@ export class ActionSpreadsheetOca extends Component {
             id: spreadsheet_model.getters.getNextListId(),
             dataSourceId,
             definition: list_info,
-            linesNumber: this.import_data.metaData.threshold,
+            linesNumber: this.import_data.dyn_number_of_rows,
             columns: this.import_data.metaData.columns,
         });
         const columns = [];
@@ -172,14 +173,22 @@ export class ActionSpreadsheetOca extends Component {
     async importDataPivot(spreadsheet_model) {
         var {sheetId, row} = this.importCreateOrReuseSheet(spreadsheet_model);
         const dataSourceId = uuidGenerator.uuidv4();
+        const colGroupBys = this.import_data.metaData.colGroupBys.concat(
+            this.import_data.metaData.expandedColGroupBys
+        );
+        const rowGroupBys = this.import_data.metaData.rowGroupBys.concat(
+            this.import_data.metaData.expandedRowGroupBys
+        );
         const pivot_info = {
             metaData: {
-                colGroupBys: this.import_data.metaData.colGroupBys,
-                rowGroupBys: this.import_data.metaData.rowGroupBys,
+                colGroupBys,
+                rowGroupBys,
                 activeMeasures: this.import_data.metaData.activeMeasures,
                 resModel: this.import_data.metaData.resModel,
+                sortedColumn: this.import_data.metaData.sortedColumn,
             },
             searchParams: this.import_data.searchParams,
+            name: this.import_data.name,
         };
         const dataSource = spreadsheet_model.config.dataSources.add(
             dataSourceId,
@@ -187,7 +196,17 @@ export class ActionSpreadsheetOca extends Component {
             pivot_info
         );
         await dataSource.load();
-        const {cols, rows, measures} = dataSource.getTableStructure().export();
+        var {cols, rows, measures} = dataSource.getTableStructure().export();
+        if (this.import_data.dyn_number_of_rows) {
+            const indentations = rows.map((r) => r.indent);
+            const max_indentation = Math.max(...indentations);
+            rows = makeDynamicRows(
+                rowGroupBys,
+                this.import_data.dyn_number_of_rows,
+                1,
+                max_indentation
+            );
+        }
         const table = {
             cols,
             rows,
@@ -202,6 +221,11 @@ export class ActionSpreadsheetOca extends Component {
             dataSourceId,
             definition: pivot_info,
         });
+        const columns = [];
+        for (let col = 0; col < table.cols[table.cols.length - 1].length; col++) {
+            columns.push(col);
+        }
+        spreadsheet_model.dispatch("AUTORESIZE_COLUMNS", {sheetId, cols: columns});
     }
     async importData(spreadsheet_model) {
         if (this.import_data.mode === "pivot") {
