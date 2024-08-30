@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-spreadsheet_dashboard_oca>=16.0dev,<16.1dev',
         'odoo-addon-spreadsheet_oca>=16.0dev,<16.1dev',
+        'odoo-addon-base_view_inheritance_extension>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
