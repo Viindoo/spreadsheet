@@ -208,7 +208,7 @@ msgstr "Bộ lọc"
 #. module: spreadsheet_oca
 #: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet_import_mode__group_ids
 msgid "Group"
-msgstr "Nhóm"
+msgstr "Nhóm quyền truy cập"
 
 #. module: spreadsheet_oca
 #: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_oca_revision__id
