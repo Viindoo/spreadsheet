@@ -6,7 +6,7 @@
     "name_vi_VN": "Bảng tính OCA",
     "summary": """
         Allow to edit spreadsheets""",
-    "version": "16.0.1.8.0",
+    "version": "16.0.1.9.1",
     "license": "AGPL-3",
     "author": "CreuBlanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/spreadsheet",

@@ -125,6 +125,11 @@ msgid "Commands"
 msgstr "Comandos"
 
 #. module: spreadsheet_oca
+#: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet__company_id
+msgid "Company"
+msgstr ""
+
+#. module: spreadsheet_oca
 #. odoo-javascript
 #: code:addons/spreadsheet_oca/static/src/spreadsheet/pivot_controller.esm.js:0
 #, python-format
@@ -142,6 +147,11 @@ msgstr "Confirmar"
 #: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet__contributor_ids
 msgid "Contributors"
 msgstr "Colaboradores"
+
+#. module: spreadsheet_oca
+#: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet__contributor_group_ids
+msgid "Contributors Groups"
+msgstr ""
 
 #. module: spreadsheet_oca
 #: model:spreadsheet.spreadsheet.import.mode,name:spreadsheet_oca.spreadsheet_import_mode_new
@@ -281,6 +291,13 @@ msgstr "Agrupado por"
 #: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet_import_mode__id
 msgid "ID"
 msgstr "ID"
+
+#. module: spreadsheet_oca
+#: model:ir.model.fields,help:spreadsheet_oca.field_spreadsheet_spreadsheet__company_id
+msgid ""
+"If set, the spreadsheet will be available only if this company is in the "
+"current companies."
+msgstr ""
 
 #. module: spreadsheet_oca
 #: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet_import__import_data
@@ -477,9 +494,19 @@ msgid "Quarter"
 msgstr "Trimestre"
 
 #. module: spreadsheet_oca
+#: model_terms:ir.ui.view,arch_db:spreadsheet_oca.spreadsheet_spreadsheet_form_view
+msgid "Read Access"
+msgstr ""
+
+#. module: spreadsheet_oca
 #: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet__reader_ids
 msgid "Readers"
 msgstr "Lectores"
+
+#. module: spreadsheet_oca
+#: model:ir.model.fields,field_description:spreadsheet_oca.field_spreadsheet_spreadsheet__reader_group_ids
+msgid "Readers Groups"
+msgstr ""
 
 #. module: spreadsheet_oca
 #. odoo-javascript
@@ -643,6 +670,11 @@ msgstr ""
 #: model:res.groups,name:spreadsheet_oca.group_user
 msgid "User"
 msgstr "Usuario"
+
+#. module: spreadsheet_oca
+#: model_terms:ir.ui.view,arch_db:spreadsheet_oca.spreadsheet_spreadsheet_form_view
+msgid "Write Access"
+msgstr ""
 
 #. module: spreadsheet_oca
 #. odoo-javascript

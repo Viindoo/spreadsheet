@@ -29,12 +29,32 @@ class SpreadsheetSpreadsheet(models.Model):
         column2="user_id",
         string="Contributors",
     )
+    contributor_group_ids = fields.Many2many(
+        "res.groups",
+        relation="spreadsheet_group_contributor",
+        column1="spreadsheet_id",
+        column2="group_id",
+        string="Contributors Groups",
+    )
     reader_ids = fields.Many2many(
         "res.users",
         relation="spreadsheet_reader",
         column1="spreadsheet_id",
         column2="user_id",
         string="Readers",
+    )
+    reader_group_ids = fields.Many2many(
+        "res.groups",
+        relation="spreadsheet_group_reader",
+        column1="spreadsheet_id",
+        column2="group_id",
+        string="Readers Groups",
+    )
+
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        help="If set, the spreadsheet will be available only"
+        " if this company is in the current companies.",
     )
 
     @api.depends("name")
