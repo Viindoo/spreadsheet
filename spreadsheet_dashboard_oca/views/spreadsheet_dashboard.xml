@@ -25,23 +25,11 @@
           widget="binary"
           filename="name"
         />
-                <!-- Put the button 2 times for having the edit button explicitly disabled for discoverability -->
                 <button
           name="open_spreadsheet"
           type="object"
           string="Edit"
           icon="fa-pencil"
-          disabled="1"
-          groups="base.group_system"
-          invisible="can_edit"
-        />
-                <button
-          name="open_spreadsheet"
-          type="object"
-          string="Edit"
-          icon="fa-pencil"
-          groups="base.group_system"
-          invisible="not can_edit"
         />
                 <button
           name="copy"
