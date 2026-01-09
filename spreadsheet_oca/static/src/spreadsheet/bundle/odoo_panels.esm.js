@@ -76,6 +76,12 @@ OdooPanel.template = "spreadsheet_oca.OdooPanel";
 OdooPanel.components = { Many2XAutocomplete };
 
 class OdooStackablePanel extends OdooPanel {
+  static props = {
+    figureId: String,
+    updateChart: Function,
+    "*": true,
+  };
+
   onChangeStacked(ev) {
     this.props.updateChart(this.props.figureId, {
       stacked: ev.target.checked,

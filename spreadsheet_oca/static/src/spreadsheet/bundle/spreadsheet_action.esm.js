@@ -17,6 +17,13 @@ const actionRegistry = registry.category("actions");
 const { Component, onMounted, onWillStart, useSubEnv } = owl;
 
 export class ActionSpreadsheetOca extends Component {
+  static props = {
+    action: Object,
+    actionId: { type: Number, optional: true },
+    className: { type: String, optional: true },
+    "*": true,
+  };
+
   setup() {
     this.router = useService("router");
     this.orm = useService("orm");
