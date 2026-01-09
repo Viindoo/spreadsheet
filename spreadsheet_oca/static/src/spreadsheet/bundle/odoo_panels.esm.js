@@ -16,7 +16,8 @@ export class OdooPanel extends Component {
   }
   get menuProps() {
     const menu = this.env.model.getters.getChartOdooMenu(this.props.figureId);
-    var result = {
+    const result = {
+      id: `odoo_menu_${this.props.figureId}`,
       fieldString: _t("Menu Items"),
       resModel: "ir.ui.menu",
       update: this.updateMenu.bind(this),
@@ -25,7 +26,6 @@ export class OdooPanel extends Component {
     };
     if (menu) {
       result.value = menu.name;
-      result.id = menu.id;
     }
     return result;
   }
