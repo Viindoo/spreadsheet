@@ -6,6 +6,13 @@ import { ControlPanel } from "@web/search/control_panel/control_panel";
 const { useState } = owl;
 
 export class SpreadsheetName extends Component {
+  static props = {
+    name: String,
+    isReadonly: { type: Boolean, optional: true },
+    onChanged: { type: Function, optional: true },
+    "*": true,
+  };
+
   setup() {
     this.state = useState({
       name: this.props.name,
