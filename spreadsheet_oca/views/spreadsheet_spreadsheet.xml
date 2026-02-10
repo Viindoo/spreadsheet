@@ -4,13 +4,21 @@
 <odoo>
 
     <record model="ir.ui.view" id="spreadsheet_spreadsheet_search_view">
-        <field
-      name="name"
-    >spreadsheet.spreadsheet.search (in spreadsheet_oca)</field>
+        <field name="name">spreadsheet.spreadsheet.search (in spreadsheet_oca)</field>
         <field name="model">spreadsheet.spreadsheet</field>
         <field name="arch" type="xml">
             <search>
-
+                <field name="name" />
+                <separator />
+                <field name="owner_id" />
+                <field name="contributor_ids" />
+                <separator />
+                <filter
+                    name="mysheets"
+                    string="My Sheets"
+                    domain="[('owner_id', '=', uid)]"
+                />
+                <searchpanel />
             </search>
         </field>
     </record>
