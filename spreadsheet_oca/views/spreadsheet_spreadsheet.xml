@@ -53,7 +53,7 @@
             <form>
                 <header />
                 <sheet>
-                    <field name="active" invisible="1" />
+                    <field name="active" invisible="1" /> <!-- Technical field for UI control -->
                     <widget
                         name="web_ribbon"
                         title="Archived"
@@ -109,7 +109,7 @@
                                 filename="filename"
                                 groups="base.group_no_one"
                             />
-                            <field name="filename" invisible="1" />
+                            <field name="filename" invisible="1" /> <!-- Technical field for UI control -->
                         </group>
                     </group>
                 </sheet>

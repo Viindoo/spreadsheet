@@ -17,7 +17,7 @@
                 <attribute name="decoration-muted">not active</attribute>
             </list>
             <list position="inside">
-                <field name="can_edit" column_invisible="True" />
+                <field name="can_edit" column_invisible="True" /> <!-- Technical field for UI control -->
                 <field
                     name="spreadsheet_binary_data"
                     groups="base.group_no_one"
