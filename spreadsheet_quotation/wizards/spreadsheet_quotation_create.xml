@@ -7,6 +7,7 @@
             <form string="Create Quotation Calculator">
                 <group>
                     <field name="sale_order_template_id" invisible="1" />
+                    <!-- Technical: carries the template context into the wizard -->
                     <field name="name" />
                     <field name="line_count" />
                 </group>

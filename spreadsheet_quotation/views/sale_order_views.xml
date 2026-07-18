@@ -7,7 +7,9 @@
         <field name="arch" type="xml">
             <div name="button_box" position="inside">
                 <field name="has_spreadsheet" invisible="1" />
+                <!-- Technical: drives the Calculator smart-button visibility -->
                 <field name="spreadsheet_id" invisible="1" />
+                <!-- Technical: stores the linked calculator spreadsheet -->
                 <button
                     name="action_open_spreadsheet_calculator"
                     type="object"
