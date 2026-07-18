@@ -18,8 +18,10 @@
                             required="mode == 'new'"
                         />
                         <field name="datasource_name" required="1" />
-                        <field name="mode" invisible="1" /> <!-- Technical field for UI control -->
-                        <field name="import_data" invisible="1" /> <!-- Technical field for UI control -->
+                        <field name="mode" invisible="1" />
+                        <!-- Technical field for UI control -->
+                        <field name="import_data" invisible="1" />
+                        <!-- Technical field for UI control -->
                         <field
                             name="spreadsheet_id"
                             domain="['|', ('owner_id', '=', uid), ('contributor_ids', '=', uid)]"
@@ -27,8 +29,10 @@
                             required="mode in ['add', 'add_sheet']"
                             options="{'no_create': True}"
                         />
-                        <field name="can_be_dynamic" invisible="1" /> <!-- Technical field for UI control -->
-                        <field name="is_tree" invisible="1" /> <!-- Technical field for UI control -->
+                        <field name="can_be_dynamic" invisible="1" />
+                        <!-- Technical field for UI control -->
+                        <field name="is_tree" invisible="1" />
+                        <!-- Technical field for UI control -->
                         <field
                             name="dynamic"
                             force_save="1"
